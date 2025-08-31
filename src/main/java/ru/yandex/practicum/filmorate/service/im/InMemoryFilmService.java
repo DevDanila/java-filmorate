@@ -1,6 +1,7 @@
 package ru.yandex.practicum.filmorate.service.im;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.filmorate.model.Film;
@@ -11,23 +12,23 @@ import java.util.List;
 
 @Slf4j
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class InMemoryFilmService implements FilmService {
 
-    private final InMemoryFilmStorage storage;
+	private final InMemoryFilmStorage storage;
 
-    @Override
-    public List<Film> getAllFilms() {
-        return storage.getAllFilms();
-    }
+	@Override
+	public List<Film> getAllFilms() {
+		return storage.getAllFilms();
+	}
 
-    @Override
-    public void addFilm(Film film) {
-        storage.addFilm(film);
-    }
+	@Override
+	public void addFilm(Film film) {
+		storage.addFilm(film);
+	}
 
-    @Override
-    public void updateFilm(Film film) {
-        storage.updateFilm(film);
-    }
+	@Override
+	public void updateFilm(Film film) {
+		storage.updateFilm(film);
+	}
 }
